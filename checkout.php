@@ -9,7 +9,7 @@ $database = new Database();
 $db = $database->getConnection();
 $auth = new Auth($db);
 $cart = new Cart();
-$product = new Product();
+$product = new Product($db);
 
 // Redirect if not logged in
 if (!$auth->isLoggedIn()) {

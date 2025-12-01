@@ -6,9 +6,13 @@ class Product {
     private $conn;
     private $table = 'Produit';
 
-    public function __construct() {
-        $database = new Database();
-        $this->conn = $database->getConnection();
+    public function __construct($db = null) {
+        if ($db) {
+            $this->conn = $db;
+        } else {
+            $database = new Database();
+            $this->conn = $database->getConnection();
+        }
     }
 
     // Create product

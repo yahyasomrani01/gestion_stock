@@ -7,7 +7,7 @@ require_once '../includes/product.php';
 $database = new Database();
 $db = $database->getConnection();
 $auth = new Auth($db);
-$product = new Product();
+$product = new Product($db);
 
 if (!$auth->isAdmin()) {
     header("Location: ../login.php");

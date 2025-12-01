@@ -6,7 +6,7 @@ require_once 'includes/product.php';
 
 $database = new Database();
 $db = $database->getConnection();
-$product = new Product();
+$product = new Product($db);
 
 $filters = [];
 if (isset($_GET['category'])) {
